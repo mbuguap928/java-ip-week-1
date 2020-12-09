@@ -9,8 +9,8 @@ No bugs reported at the moment however you can raise any issues from appropriate
 ## Technologies Applied
 * JAVA
 * GRADLE
-* GIT
+* GIT HUB
 * MARKDOWN
-## Support Details
+## Contact Details 0729768310
 ### License
 _Copyright (c) 2020 **Peter Mbugua** MIT License_1
