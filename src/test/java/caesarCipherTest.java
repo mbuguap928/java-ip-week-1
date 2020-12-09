@@ -1,3 +1,4 @@
+import code.Decoding;
 import code.Encoding;
 import org.junit.Test;
 
@@ -12,13 +13,33 @@ public class caesarCipherTest {
         assertEquals(value, caesarCipher.getValue());
     }
     @Test
-    public void testEncryption_encryptionValidation_boolean(){
+    public void testEncoding_encodingValidation_boolean(){
         Encoding encrypt = new Encoding();
-        String input = "My name is Daniel";
+        String input = "My name is Peter";
+        encrypt.setKey(10);
         encrypt.setInput(input);
         String encryptedString = "GS HUGY CM XUHCYF";
         assertEquals(encryptedString, encrypt.getOutput());
     }
+    @Test
+    public void testDecoding_decodingValidation_boolean() {
+        Encoding encode = new Encoding();
+        String input = "My name is Peter";
+        encode.setKey(10);
+        encode.setInput(input);
+        String encryptedString = "GS HUGY CM JYNYL";
+        assertEquals(encryptedString, encode.getOutput());
+    }
 
+    @Test
+    public void testBoth_encodingAndDecoding_string() {
+        Encoding encode = new Encoding();
+        String rawString = "My name is Peter".toUpperCase();
+        encode.setKey(10);
+        encode.setInput(rawString);
+        Decoding decoding = new Decoding();
+        decoding.setInput(encode.getOutput());
+        assertEquals(rawString, decoding.getOutput());
 
+    }
 }

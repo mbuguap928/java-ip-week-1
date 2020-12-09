@@ -3,7 +3,7 @@ package code;
 public class Encoding {
     private String input;
     private String output;
-    private int key = 20;
+    private int key ;
     private String[] alphabets = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
 
 
@@ -33,6 +33,14 @@ public class Encoding {
         this.output = encoding(input);
     }
 
+    public int getKey() {
+        return key;
+    }
+
+    public void setKey(int key) {
+        this.key = key;
+    }
+
     private String encoding(String input) {
         String phrase = input.toUpperCase();
         String output = "";
@@ -44,8 +52,8 @@ public class Encoding {
                 if (!theletter.equals(" ")) {
                     for (int i = 0; i <= alphabets.length; i++) {
                         if (theletter.equalsIgnoreCase(alphabets[i])) {
-                            index = i + key;
-                            if (index > alphabets.length)
+                            index = i + getKey();
+                            if (index >=alphabets.length)
                                 output = output + alphabets[index - 26];
                             else
                                 output = output + alphabets[index];
