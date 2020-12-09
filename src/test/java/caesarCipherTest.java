@@ -16,16 +16,16 @@ public class caesarCipherTest {
     public void testEncoding_encodingValidation_boolean(){
         Encoding encrypt = new Encoding();
         String input = "My name is Peter";
-        encrypt.setKey(10);
+        encrypt.setKey(20);
         encrypt.setInput(input);
-        String encryptedString = "GS HUGY CM XUHCYF";
+        String encryptedString = "GS HUGY CM JYNYL";
         assertEquals(encryptedString, encrypt.getOutput());
     }
     @Test
     public void testDecoding_decodingValidation_boolean() {
         Encoding encode = new Encoding();
         String input = "My name is Peter";
-        encode.setKey(10);
+        encode.setKey(20);
         encode.setInput(input);
         String encryptedString = "GS HUGY CM JYNYL";
         assertEquals(encryptedString, encode.getOutput());
@@ -38,6 +38,7 @@ public class caesarCipherTest {
         encode.setKey(10);
         encode.setInput(rawString);
         Decoding decoding = new Decoding();
+        decoding.setKey(10);
         decoding.setInput(encode.getOutput());
         assertEquals(rawString, decoding.getOutput());
 
